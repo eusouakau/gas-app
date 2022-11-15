@@ -15,6 +15,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.gas_app.R;
 import com.example.gas_app.dao.AppDatabase;
 import com.example.gas_app.dao.UserDAO;
 import com.example.gas_app.model.User;
