@@ -18,16 +18,19 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.gas_app.R;
+import com.example.gas_app.dao.AppDatabase;
+import com.example.gas_app.dao.UserDAO;
 import com.example.gas_app.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
-    List<User> listaPessoas = new ArrayList<>();
+    List<User> listaUsuarios = new ArrayList<>();
     Context context;
-    public MyAdapter(List<Pessoa> pessoas) {
-        this.listaPessoas = pessoas;
+    public UserAdapter(List<User> user) {
+        this.listaUsuarios= user;
     }
 
     @NonNull
@@ -47,10 +50,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, @SuppressLint("RecyclerView") int position) {
         //exibe os itens no Recycler
-        Pessoa p = listaPessoas.get(position);
-        myViewHolder.nome.setText(p.getNome());
-        myViewHolder.dataNascimento.setText(p.getDataNascimento());
-        myViewHolder.endereco.setText(p.getEndereco());
+        User u = listaUsuarios.get(position);
+        myViewHolder.nome.setText(u.getNome());
+        myViewHolder.endereco.setText(u.getEndereco());
         myViewHolder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,38 +60,37 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             }
         });
         Bundle bundle = new Bundle();
-        bundle.putInt("ID", listaPessoas.get(position).getId());
-        bundle.putString("NOME", listaPessoas.get(position).getNome());
-        bundle.putString("END", listaPessoas.get(position).getEndereco());
-        bundle.putString("DTNASC", listaPessoas.get(position).getDataNascimento());
+        bundle.putInt("ID", listaUsuarios.get(position).getId());
+        bundle.putString("NOME", listaUsuarios.get(position).getNome());
+        bundle.putString("END", listaUsuarios.get(position).getEndereco());
         myViewHolder.btnEdit.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.nav_editarFragment, bundle));
     }
 
     @Override
     public int getItemCount() {
         //retorna a quantidade de itens que será exibida
-        return listaPessoas.size();
+        return listaUsuarios.size();
     }
 
     public void removerItem(final int position) {
         new AlertDialog.Builder(context)
-                .setTitle("Deletando pessoa")
-                .setMessage("Tem certeza que deseja deletar essa pessoa?")
+                .setTitle("Deletando usuário")
+                .setMessage("Tem certeza que deseja deletar este usuario?")
                 .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         new AsyncTask<Void, Void, Void>() {
                             @Override
                             protected Void doInBackground(Void... voids) {
-                                PessoaDAO pessoaDAO = AppDatabase.getInstance(context).createPessoaDAO();
-                                List<Pessoa> pessoas = pessoaDAO.getAllPessoas();
+                                UserDAO pessoaDAO = AppDatabase.getInstance(context).createUserDAO();
+                                List<User> pessoas = pessoaDAO.getAllUsers();
                                 pessoaDAO.delete(pessoas.get(position));
                                 return null;
                             }
                             @Override
                             protected void onPostExecute(Void aVoid) {
                                 super.onPostExecute(aVoid);
-                                listaPessoas.remove(position);
+                                listaUsuarios.remove(position);
                                 notifyItemRemoved(position);
                             }
                         }.execute();
@@ -99,7 +100,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         //dados da pessoa que serão exibidos no recycler
         TextView nome;
-        TextView dataNascimento;
         TextView endereco;
         ImageButton btnDelete;
         ImageButton btnEdit;
@@ -110,7 +110,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             super(itemView);
             //passa uma referência para os componentes que estão na interface
             nome = itemView.findViewById(R.id.textViewNome);
-            dataNascimento = itemView.findViewById(R.id.textViewDtNasc);
             endereco = itemView.findViewById(R.id.textViewEndereco);
             btnDelete = itemView.findViewById(R.id.btnExcluir);
             btnEdit= itemView.findViewById(R.id.btnEditar);
