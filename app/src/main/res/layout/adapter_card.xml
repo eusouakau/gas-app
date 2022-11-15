@@ -22,12 +22,6 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewDtNasc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Data de Nascimento" />
-
-        <TextView
             android:id="@+id/textViewEndereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,14 +35,14 @@
             android:id="@+id/btnExcluir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btnExcluir"
+            android:text="Excluir"
             android:layout_marginRight="@dimen/margin"
          />
         <Button
             android:id="@+id/btnEditar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btnEditar"
+            android:text="Editar"
             android:layout_marginLeft="@dimen/margin"
           />
         </androidx.appcompat.widget.LinearLayoutCompat>
