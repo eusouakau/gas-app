@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.gas_app.R;
 import com.example.gas_app.adapter.UserAdapter;
 import com.example.gas_app.dao.AppDatabase;
 import com.example.gas_app.dao.UserDAO;
