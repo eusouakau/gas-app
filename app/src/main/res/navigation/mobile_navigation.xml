@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.gas_app.fragments.HomeFragment"
+        android:label="Menu temp"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_cadastrarFragment"
+        android:name="com.example.gas_app.fragments.CadastroFragment"
+        android:label="CadastrarFragment"
+        tools:layout="@layout/fragment_cadastrar">
+        <action
+            android:id="@+id/action_nav_cadastrarFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_listarFragment"
+        android:name="com.example.gas_app.fragments.ListaFragment"
+        android:label="ListarFragment"
+        tools:layout="@layout/fragment_listar">
+        <action
+            android:id="@+id/action_listarFragment_to_editarFragment"
+            app:destination="@id/nav_editarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_editarFragment"
+        android:name="com.example.gas_app.fragments.EditarFragment"
+        android:label="EditarFragment"
+        tools:layout="@layout/fragment_editar">
+        <action
+            android:id="@+id/action_nav_editarFragment_to_nav_listarFragment"
+            app:destination="@id/nav_listarFragment" />
+    </fragment>
+
+</navigation>
