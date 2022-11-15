@@ -23,26 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtNome"
-            android:hint="@string/nome"
+            android:hint="Nome temp"
             android:inputType="textPersonName" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/layoutData"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:maxLength="10"
-        app:boxBackgroundColor="@null"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtDtNasc"
-            android:hint="@string/dtNasc"
-            android:inputType="text|date" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -59,13 +41,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtEnd"
-            android:hint="@string/endereco"
+            android:hint="endereco temp"
             android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/btnCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btnCadastrar"/>
+        android:text="Cadastrar"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
