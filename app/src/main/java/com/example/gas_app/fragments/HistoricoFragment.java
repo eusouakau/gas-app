@@ -17,16 +17,15 @@ import com.example.gas_app.dao.AppDatabase;
 import com.example.gas_app.dao.UserDAO;
 import com.example.gas_app.model.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class ListaFragment extends Fragment {
+public class HistoricoFragment extends Fragment {
     private  RecyclerView recyclerView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_listar, container, false);
+        View root = inflater.inflate(R.layout.fragment_historico, container, false);
         recyclerView = root.findViewById(R.id.recyclerView);
         //configurar o adapter - que formata que o layout de cada item do recycler
         new AsyncTask<Void,Void, List<User>>() {
