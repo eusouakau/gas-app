@@ -11,6 +11,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:id="@+id/layoutNome"
         app:counterEnabled="true"
         app:counterMaxLength="30"
@@ -26,6 +27,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:id="@+id/layoutEndereco"
         app:counterEnabled="true"
         app:counterMaxLength="30"
@@ -41,6 +43,8 @@
         android:id="@+id/btnEditar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@color/amarelo"
         android:text="salvar" />
 
 
