@@ -1,54 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.appcompat.widget.LinearLayoutCompat  xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layoutLogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="@dimen/margin">
-
+    android:padding="16dp">
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/layoutNome"
         app:counterEnabled="true"
-        app:counterMaxLength="60"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        app:boxBackgroundColor="@null"
-        >
+        app:counterMaxLength="30"
+        app:errorEnabled="true"
+        app:hintTextColor="?attr/colorPrimary">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtNome"
-            android:hint="nome"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:hint="@string/nome" />
     </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/layoutEndereco"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:maxLength="100"
-        app:boxBackgroundColor="@null"
-        >
-
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:errorEnabled="true"
+        app:hintTextColor="?attr/colorPrimary">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextEndereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtEnd"
-            android:hint="endereco"
-            android:inputType="textPersonName" />
+            android:hint="@string/endereco" />
     </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/btnEditar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Editar"
-      />
+        android:text="salvar" />
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>
