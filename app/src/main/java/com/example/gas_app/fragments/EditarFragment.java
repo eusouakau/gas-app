@@ -34,9 +34,9 @@ public class EditarFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_editar, container, false);
         Bundle bundle = getArguments();
         id = bundle.getInt("ID");
-        txtNome = root.findViewById(R.id.txtNome);
+        txtNome = root.findViewById(R.id.editTextNome);
         txtNome.setText(bundle.getString("NOME"));
-        txtEnd = root.findViewById(R.id.txtEnd);
+        txtEnd = root.findViewById(R.id.editTextEndereco);
         txtEnd.setText(bundle.getString("END"));
         btnEditar = root.findViewById(R.id.btnEditar);
         btnEditar.setOnClickListener(new View.OnClickListener() {
