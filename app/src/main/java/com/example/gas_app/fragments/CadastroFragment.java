@@ -33,8 +33,8 @@ public class CadastroFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_cadastrar, container, false);
         context = getContext();
-        txtNome = root.findViewById(R.id.txtNome);
-        txtEndereco = root.findViewById(R.id.txtEnd);
+        txtNome = root.findViewById(R.id.editTextNome);
+        txtEndereco = root.findViewById(R.id.editTextEndereco);
         btnCadastrar = root.findViewById(R.id.btnCadastrar);
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
