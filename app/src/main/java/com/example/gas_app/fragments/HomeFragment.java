@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gas_app.R;
-import com.example.gas_app.adapter.UserAdapter;
+import com.example.gas_app.adapter.PedidoAdapter;
 import com.example.gas_app.dao.AppDatabase;
-import com.example.gas_app.dao.UserDAO;
-import com.example.gas_app.model.User;
+import com.example.gas_app.dao.PedidoDAO;
+import com.example.gas_app.model.Pedido;
 
 import java.util.List;
 
@@ -30,26 +30,26 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = root.findViewById(R.id.recyclerView);
         //configurar o adapter - que formata que o layout de cada item do recycler
-        new AsyncTask<Void,Void, List<User>>() {
+        new AsyncTask<Void,Void, List<Pedido>>() {
 
             @Override
-            protected List<User> doInBackground(Void... voids) {
-                UserDAO userDAO = AppDatabase.getInstance(getContext()).createUserDAO();
-                return userDAO.getAllUsers();
+            protected List<Pedido> doInBackground(Void... voids) {
+                PedidoDAO pedidoDAO = AppDatabase.getInstance(getContext()).createPedidoDAO();
+                return pedidoDAO.getAllPedidos();
             }
 
             @Override
-            protected void onPostExecute(List<User> users) {
-                super.onPostExecute(users);
-                inicializaRecycler(users);
+            protected void onPostExecute(List<Pedido> pedidos) {
+                super.onPostExecute(pedidos);
+                inicializaRecycler(pedidos);
             }
 
         }.execute();
         return root;
     }
-    private void inicializaRecycler(List<User> users){
-        UserAdapter userAdapter = new UserAdapter(users);//new MyAdapter(Pessoa.inicializaLista());
-        recyclerView.setAdapter(userAdapter);
+    private void inicializaRecycler(List<Pedido> pedidos){
+        PedidoAdapter pedidoAdapter = new PedidoAdapter(pedidos);//new MyAdapter(Pessoa.inicializaLista());
+        recyclerView.setAdapter(pedidoAdapter);
         //linha de código usada para otimizar o recycler
         recyclerView.setHasFixedSize(true);
 
