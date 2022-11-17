@@ -62,27 +62,28 @@
         android:textSize="20sp"
         android:layout_marginBottom="20dp"
         android:text="Pagamento" />
+
     <RelativeLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="99dp"
-            android:layout_height="31dp"
-            android:layout_marginLeft="68dp"
-            android:layout_marginEnd="74dp"
-            android:layout_toStartOf="@+id/radioButton3"
-            android:text="Cartão" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
+        <CheckBox
+            android:id="@+id/checkBox"
             android:layout_width="104dp"
             android:layout_height="34dp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="61dp"
             android:text="Dinheiro" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="99dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="68dp"
+            android:layout_marginEnd="48dp"
+            android:layout_toStartOf="@+id/checkBox"
+            android:text="Cartão" />
     </RelativeLayout>
     <Button
         android:id="@+id/btnCadastrar"
@@ -91,8 +92,6 @@
         android:layout_marginTop="100dp"
         android:background="@color/amarelo"
         android:text="@string/btnComprar" />
-
-
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
