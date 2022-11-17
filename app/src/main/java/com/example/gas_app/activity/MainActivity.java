@@ -31,10 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_cadastrarFragment, R.id.nav_historicoFragment)
+                R.id.nav_home, R.id.nav_pedidoFragment, R.id.nav_historicoFragment)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -53,10 +52,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                // User chose the "Settings" item, show the app settings UI...
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Segurança");
-                //define a mensagem
+
                 builder.setMessage("1. Manusear botijões de gás com cuidado, evitando que caiam ou sofram pancadas;\n" +
                                 "2. Os botijões devem ser guardados em locais limpos, ventilados, livres de óleo e graxa, protegidos contra chuva, sol, e outras fontes de calor;\n" +
                                 "3. Botijões de gás domésticos não devem ficar juntos do fogão. Precisam estar fora da casa e conectados com tubulações metálicas;\n" +
@@ -70,13 +69,11 @@ public class MainActivity extends AppCompatActivity {
                                 //colocar a ação aqui
                             }
                         });
-                // Create the AlertDialog object and return it
                 builder.create().show();
                 return true;
 
             default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
+
                 return super.onOptionsItemSelected(item);
 
         }
