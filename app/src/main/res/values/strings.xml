@@ -16,11 +16,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="listar">Listar Objetos nessa Tela</string>
-    <string name="cadastrar">Faça seu cadastro</string>
+    <string name="carrinho">Carrinho</string>
     <string name="editar">Editar Objeto nessa Tela</string>
     <string name="btnEditar">Editar</string>
     <string name="btnExcluir">Deletar</string>
-    <string name="btnCadastrar">Cadastrar</string>
+    <string name="btnComprar">Concluir</string>
     <string name="ok">Ok</string>
     <string name="cancelar">Cancelar</string>
     <string name="nome">Nome</string>
