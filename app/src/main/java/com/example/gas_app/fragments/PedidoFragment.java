@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,13 +15,11 @@ import androidx.navigation.Navigation;
 
 import com.example.gas_app.R;
 import com.example.gas_app.dao.AppDatabase;
-import com.example.gas_app.dao.UserDAO;
-import com.example.gas_app.model.User;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
 
-public class CadastroFragment extends Fragment {
+public class PedidoFragment extends Fragment {
     private TextInputEditText txtNome;
     private TextInputEditText txtEndereco;
     private Button btnCadastrar;
@@ -31,7 +28,7 @@ public class CadastroFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_cadastrar, container, false);
+        View root = inflater.inflate(R.layout.fragment_pedido, container, false);
         context = getContext();
         txtNome = root.findViewById(R.id.editTextNome);
         txtEndereco = root.findViewById(R.id.editTextEndereco);
