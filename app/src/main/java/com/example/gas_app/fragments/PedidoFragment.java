@@ -57,7 +57,7 @@ public class PedidoFragment extends Fragment {
                             Snackbar.make(view, "Erro ao inserir registro", Snackbar.LENGTH_LONG).show();
                         else {
                             Snackbar.make(view, "Nome informado = "+txtNome.getText().toString(), Snackbar.LENGTH_LONG).show();
-                            Navigation.findNavController(view).navigate(R.id.action_nav_cadastrarFragment_to_nav_home);        }
+                            Navigation.findNavController(view).navigate(R.id.action_nav_pedidoFragment_to_nav_home);        }
                     }
                 }.execute();
             }
