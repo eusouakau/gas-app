@@ -17,7 +17,7 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/anuncio" />
+            app:srcCompat="@drawable/gas30" />
 
         <RelativeLayout
             android:orientation="horizontal"
@@ -30,16 +30,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="45dp"
                 android:layout_marginStart="70dp"
-                android:background="@color/amarelo"
                 app:srcCompat="@drawable/baseline_remove_24" />
 
             <EditText
                 android:id="@+id/editTextNumber"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="180dp"
-                android:layout_alignParentEnd="true"
+                android:layout_width="58dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="169dp"
+                android:layout_marginEnd="152dp"
                 android:ems="10"
                 android:inputType="number" />
 
@@ -47,7 +47,6 @@
                 android:id="@+id/addButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/amarelo"
                 android:layout_alignParentRight="true"
                 android:layout_marginEnd="70dp"
                 android:layout_marginLeft="45dp"
