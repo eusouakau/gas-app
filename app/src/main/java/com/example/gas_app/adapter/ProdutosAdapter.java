@@ -2,8 +2,6 @@ package com.example.gas_app.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,22 +10,17 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gas_app.R;
-import com.example.gas_app.dao.AppDatabase;
-import com.example.gas_app.dao.PedidoDAO;
 import com.example.gas_app.mock.Produtos;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class ProdutosAdapter extends RecyclerView.Adapter<ProdutosAdapter.MyViewHolder> {
 
-    List<Produtos> listaProdutos = new ArrayList<>();
+    List<Produtos> listaProdutos;
     Context context;
     public ProdutosAdapter(List<Produtos> produtos) {
         this.listaProdutos = produtos;
@@ -55,7 +48,6 @@ public class ProdutosAdapter extends RecyclerView.Adapter<ProdutosAdapter.MyView
         bundle.putInt("IMG", listaProdutos.get(position).img);
         bundle.putString("NOME", listaProdutos.get(position).nome);
         bundle.putString("PRECO", listaProdutos.get(position).preco);
-        myViewHolder.btnEdit.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.nav_homeFragment, bundle));
     }
 
     @Override
