@@ -17,8 +17,8 @@ import androidx.navigation.Navigation;
 
 import com.example.gas_app.R;
 import com.example.gas_app.dao.AppDatabase;
-import com.example.gas_app.dao.UserDAO;
-import com.example.gas_app.model.User;
+import com.example.gas_app.dao.PedidoDAO;
+import com.example.gas_app.model.Pedido;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -54,16 +54,16 @@ public class EditarFragment extends Fragment {
                 .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        User user = new User();
-                        user.setId(id);
-                        user.setNome(txtNome.getText().toString().trim());
-                        user.setEndereco(txtEnd.getText().toString().trim());
-                        Log.d("OBJ", user.toString());
+                        Pedido pedido = new Pedido();
+                        pedido.setId(id);
+                        pedido.setNome(txtNome.getText().toString().trim());
+                        pedido.setEndereco(txtEnd.getText().toString().trim());
+
                         AsyncTask<Void, Void, Void> execute = new AsyncTask<Void, Void, Void>() {
                             @Override
                             protected Void doInBackground(Void... voids) {
-                                UserDAO userDAO = AppDatabase.getInstance(getContext()).createUserDAO();
-                                userDAO.update(user);
+                                PedidoDAO pedidoDAO = AppDatabase.getInstance(getContext()).createPedidoDAO();
+                                pedidoDAO.update(pedido);
                                 return null;
                             }
 
@@ -71,7 +71,7 @@ public class EditarFragment extends Fragment {
                             protected void onPostExecute(Void aVoid) {
                                 super.onPostExecute(aVoid);
                                 Snackbar.make(getView(), "item editado!!!", Snackbar.LENGTH_LONG).show();
-                                Navigation.findNavController(getView()).navigate(R.id.action_nav_editarFragment_to_nav_listarFragment);
+                                Navigation.findNavController(getView()).navigate(R.id.action_nav_editarFragment_to_nav_historicoFragment);
                             }
                         }.execute();
 
