@@ -15,6 +15,8 @@ import androidx.navigation.Navigation;
 
 import com.example.gas_app.R;
 import com.example.gas_app.dao.AppDatabase;
+import com.example.gas_app.dao.PedidoDAO;
+import com.example.gas_app.model.Pedido;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -40,13 +42,13 @@ public class PedidoFragment extends Fragment {
                 new AsyncTask<Void,Integer, Integer>() {
                     @Override
                     protected Integer doInBackground(Void... voids) {
-                        UserDAO userDao = AppDatabase.getInstance(context).createUserDAO();
-                        User user = new User();
-                        user.setNome(txtNome.getText().toString());
-                        user.setEndereco(txtEndereco.getText().toString());
+                        PedidoDAO pedidoDao = AppDatabase.getInstance(context).createPedidoDAO();
+                        Pedido pedido = new Pedido();
+                        pedido.setNome(txtNome.getText().toString());
+                        pedido.setEndereco(txtEndereco.getText().toString());
 
-                        userDao.insert(user);
-                        return user.getId();
+                        pedidoDao.insert(pedido);
+                        return pedido.getId();
                     }
 
                     @Override
