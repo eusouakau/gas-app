@@ -12,12 +12,12 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_cadastrarFragment"
+        android:id="@+id/nav_pedidoFragment"
         android:name="com.example.gas_app.fragments.PedidoFragment"
-        android:label="CadastrarFragment"
+        android:label="PedidoFragment"
         tools:layout="@layout/fragment_pedido">
         <action
-            android:id="@+id/action_nav_cadastrarFragment_to_nav_home"
+            android:id="@+id/action_nav_pedidoFragment_to_nav_home"
             app:destination="@id/nav_home" />
     </fragment>
     <fragment
