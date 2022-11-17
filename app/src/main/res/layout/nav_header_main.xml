@@ -16,11 +16,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="PedeGas" />
+        android:text="Butano Gás"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seja bem-vindo!" />
+        android:text="Seja bem-vindo!"
+        android:textSize="20sp"/>
 </LinearLayout>
