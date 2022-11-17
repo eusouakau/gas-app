@@ -6,15 +6,15 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.gas_app.model.User;
+import com.example.gas_app.model.Pedido;
 
 
-@Database(entities = { User.class }, version = 1)
+@Database(entities = { Pedido.class }, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase appDatabase;
 
-    public abstract UserDAO createUserDAO();
+    public abstract PedidoDAO createPedidoDAO();
 
     public static AppDatabase getInstance(Context context) {
         if(appDatabase == null) {
