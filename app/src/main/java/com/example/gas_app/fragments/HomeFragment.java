@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = root.findViewById(R.id.recyclerView);
-        //configurar o adapter - que formata que o layout de cada item do recycler
+
         new AsyncTask<Void,Void, List<Pedido>>() {
 
             @Override
@@ -48,15 +48,12 @@ public class HomeFragment extends Fragment {
         return root;
     }
     private void inicializaRecycler(List<Pedido> pedidos){
-        PedidoAdapter pedidoAdapter = new PedidoAdapter(pedidos);//new MyAdapter(Pessoa.inicializaLista());
+        PedidoAdapter pedidoAdapter = new PedidoAdapter(pedidos);
         recyclerView.setAdapter(pedidoAdapter);
-        //linha de código usada para otimizar o recycler
         recyclerView.setHasFixedSize(true);
 
-        //configurar o gerenciador de layout
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
-        //definindo o layout do recycler
         recyclerView.setLayoutManager(layoutManager);
 
 
