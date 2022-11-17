@@ -10,14 +10,14 @@
             android:title="@string/pedir_gas" />
 
         <item
-            android:id="@+id/nav_cadastrarFragment"
-            android:icon="@drawable/baseline_person_add_24"
-            android:title="@string/cadastrar" />
+            android:id="@+id/nav_pedidoFragment"
+            android:icon="@drawable/baseline_shopping_cart_24"
+            android:title="@string/carrinho" />
 
         <item
             android:id="@+id/nav_historicoFragment"
             android:icon="@drawable/baseline_history_20"
-            android:title="Histórico de compras" />
+            android:title="Histórico de pedidos" />
 
 
     </group>
