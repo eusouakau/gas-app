@@ -26,10 +26,10 @@ import com.example.gas_app.model.Pedido;
 import java.util.List;
 
 public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.MyViewHolder> {
-    List<Pedido> listaPedidos = new ArrayList<>();
+    List<Pedido> listaPedidos;
     Context context;
     public PedidoAdapter(List<Pedido> pedido) {
-        this.listaPedidos= pedido;
+        this.listaPedidos = pedido;
     }
 
     @NonNull
