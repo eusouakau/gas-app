@@ -18,7 +18,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public static AppDatabase getInstance(Context context) {
         if(appDatabase == null) {
-            appDatabase = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "gas-app")
+            appDatabase = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "gas-app-db")
                     .fallbackToDestructiveMigration()
                     .build();
         }
