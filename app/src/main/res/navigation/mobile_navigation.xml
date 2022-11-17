@@ -13,20 +13,20 @@
 
     <fragment
         android:id="@+id/nav_cadastrarFragment"
-        android:name="com.example.gas_app.fragments.CadastroFragment"
+        android:name="com.example.gas_app.fragments.PedidoFragment"
         android:label="CadastrarFragment"
-        tools:layout="@layout/fragment_cadastrar">
+        tools:layout="@layout/fragment_pedido">
         <action
             android:id="@+id/action_nav_cadastrarFragment_to_nav_home"
             app:destination="@id/nav_home" />
     </fragment>
     <fragment
-        android:id="@+id/nav_listarFragment"
+        android:id="@+id/nav_historicoFragment"
         android:name="com.example.gas_app.fragments.HistoricoFragment"
         android:label="ListarFragment"
         tools:layout="@layout/fragment_historico">
         <action
-            android:id="@+id/action_listarFragment_to_editarFragment"
+            android:id="@+id/action_historicoFragment_to_editarFragment"
             app:destination="@id/nav_editarFragment" />
     </fragment>
     <fragment
@@ -35,8 +35,8 @@
         android:label="EditarFragment"
         tools:layout="@layout/fragment_editar">
         <action
-            android:id="@+id/action_nav_editarFragment_to_nav_listarFragment"
-            app:destination="@id/nav_listarFragment" />
+            android:id="@+id/action_nav_editarFragment_to_nav_historicoFragment"
+            app:destination="@id/nav_historicoFragment" />
     </fragment>
 
 </navigation>
