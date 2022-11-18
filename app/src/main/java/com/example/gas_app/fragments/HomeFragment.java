@@ -12,15 +12,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gas_app.R;
-import com.example.gas_app.adapter.PedidoAdapter;
-import com.example.gas_app.dao.AppDatabase;
-import com.example.gas_app.dao.PedidoDAO;
-import com.example.gas_app.model.Pedido;
+import com.example.gas_app.adapter.ProdutoAdapter;
+import com.example.gas_app.mock.MockProduto;
+import com.example.gas_app.model.Produto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-
 
     private RecyclerView recyclerView;
 
@@ -30,32 +29,48 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = root.findViewById(R.id.recyclerView);
 
-        new AsyncTask<Void,Void, List<Pedido>>() {
+        int tam = MockProduto.nome.length;
+
+        new AsyncTask<Void,Void, List<Produto>>() {
 
             @Override
-            protected List<Pedido> doInBackground(Void... voids) {
-                PedidoDAO pedidoDAO = AppDatabase.getInstance(getContext()).createPedidoDAO();
-                return pedidoDAO.getAllPedidos();
+            protected List<Produto> doInBackground(Void... voids) {
+                List<Produto> produtos = new ArrayList<>();
+                Produto produto = new Produto();
+
+                String nome = "";
+                Double preco = 0.0;
+
+                for (int position = 0; position < tam; position ++ ){
+                    nome = MockProduto.nome[position];
+                    produto.setNome(nome.trim());
+
+                    preco = MockProduto.preco[position];
+                    produto.setPreco(preco);
+
+                    produtos.add(produto);
+                }
+
+                return produtos;
             }
 
             @Override
-            protected void onPostExecute(List<Pedido> pedidos) {
-                super.onPostExecute(pedidos);
-                inicializaRecycler(pedidos);
+            protected void onPostExecute(List<Produto> produtos) {
+                super.onPostExecute(produtos);
+                inicializaRecycler(produtos);
             }
 
         }.execute();
         return root;
     }
-    private void inicializaRecycler(List<Pedido> pedidos){
-        PedidoAdapter pedidoAdapter = new PedidoAdapter(pedidos);
-        recyclerView.setAdapter(pedidoAdapter);
+    private void inicializaRecycler(List<Produto> produtos){
+        ProdutoAdapter produtoAdapter = new ProdutoAdapter(produtos);
+        recyclerView.setAdapter(produtoAdapter);
         recyclerView.setHasFixedSize(true);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
         recyclerView.setLayoutManager(layoutManager);
-
 
     }
 }
