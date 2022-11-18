@@ -8,34 +8,27 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.gas_app.fragments.HomeFragment"
-        android:label="Menu temp"
+        android:label="@string/butano"
         tools:layout="@layout/fragment_home" />
-
+        <action
+            android:id="@+id/action_nav_home_to_nav_pedidoFragment"
+            app:destination="@id/nav_pedidoFragment" />
     <fragment
         android:id="@+id/nav_pedidoFragment"
         android:name="com.example.gas_app.fragments.PedidoFragment"
-        android:label="PedidoFragment"
+        android:label="@string/carrinho"
         tools:layout="@layout/fragment_pedido">
         <action
-            android:id="@+id/action_nav_pedidoFragment_to_nav_home"
-            app:destination="@id/nav_home" />
+            android:id="@+id/action_nav_pedidoFragment_to_nav_historicoFragment"
+            app:destination="@id/nav_historicoFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_historicoFragment"
         android:name="com.example.gas_app.fragments.HistoricoFragment"
-        android:label="ListarFragment"
+        android:label="@string/historico"
         tools:layout="@layout/fragment_historico">
         <action
-            android:id="@+id/action_historicoFragment_to_editarFragment"
-            app:destination="@id/nav_editarFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/nav_editarFragment"
-        android:name="com.example.gas_app.fragments.EditarFragment"
-        android:label="EditarFragment"
-        tools:layout="@layout/fragment_editar">
-        <action
-            android:id="@+id/action_nav_editarFragment_to_nav_historicoFragment"
+            android:id="@+id/action_nav_historicoFragment_self"
             app:destination="@id/nav_historicoFragment" />
     </fragment>
 
