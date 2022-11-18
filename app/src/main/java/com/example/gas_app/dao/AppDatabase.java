@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.example.gas_app.model.Pedido;
 
 
-@Database(entities = { Pedido.class }, version = 1)
+@Database(entities = { Pedido.class }, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase appDatabase;
@@ -18,7 +18,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public static AppDatabase getInstance(Context context) {
         if(appDatabase == null) {
-            appDatabase = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "gas-app-db")
+            appDatabase = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "gas-app-db-v2")
                     .fallbackToDestructiveMigration()
                     .build();
         }
