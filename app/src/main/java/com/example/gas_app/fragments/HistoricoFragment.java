@@ -54,4 +54,6 @@ public class HistoricoFragment extends Fragment {
 
         recyclerView.setLayoutManager(layoutManager);
     }
+
+
 }
