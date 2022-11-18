@@ -1,31 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
     app:cardElevation="4dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="8dp">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textViewNome"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/gas30" />
-
+            android:textSize="30sp"
+            android:background="@color/verde"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="@string/botijao" />
         <RelativeLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/textViewPrecoRS"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/amarelo"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/reais" />
+
+            <TextView
+                android:id="@+id/textViewPreco"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:textSize="20sp"
+                android:background="@color/amarelo"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/preco" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageViewImg"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            app:srcCompat="@drawable/gas30" />
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/verde">
+
             <ImageButton
-                android:id="@+id/removeButton"
+                android:id="@+id/subButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="45dp"
@@ -33,13 +70,13 @@
                 app:srcCompat="@drawable/baseline_remove_24" />
 
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/editTextQtd"
                 android:layout_width="58dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginLeft="169dp"
-                android:layout_marginEnd="152dp"
+                android:layout_marginLeft="160dp"
+                android:layout_marginEnd="161dp"
                 android:ems="10"
                 android:inputType="number" />
 
@@ -51,6 +88,44 @@
                 android:layout_marginEnd="70dp"
                 android:layout_marginLeft="45dp"
                 app:srcCompat="@drawable/baseline_add_24" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="115dp"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="251dp"
+                android:text="@string/total"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewTotal"
+                android:layout_width="68dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="95dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/preco"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttonAdicionar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentEnd="true"
+                android:text="@string/btnAdicionar" />
 
         </RelativeLayout>
 
