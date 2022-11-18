@@ -65,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
                                 "7. Ao acender um forno de fogão, riscar primeiro o fósforo e abrir o gás depois;\n" +
                                 "Se a casa ficar desocupada por um período prolongado, feche o registro de gás.")
                         .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                //colocar a ação aqui
-                            }
+                            public void onClick(DialogInterface dialog, int id) {}
                         });
                 builder.create().show();
                 return true;
