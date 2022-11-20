@@ -28,8 +28,8 @@
         android:label="@string/historico"
         tools:layout="@layout/fragment_historico">
         <action
-            android:id="@+id/action_nav_historicoFragment_self"
-            app:destination="@id/nav_historicoFragment" />
+            android:id="@+id/action_nav_historicoFragment_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
 
 </navigation>
