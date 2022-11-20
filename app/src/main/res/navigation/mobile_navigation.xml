@@ -9,10 +9,11 @@
         android:id="@+id/nav_home"
         android:name="com.example.gas_app.fragments.HomeFragment"
         android:label="@string/butano"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_nav_pedidoFragment"
             app:destination="@id/nav_pedidoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_pedidoFragment"
         android:name="com.example.gas_app.fragments.PedidoFragment"
@@ -26,10 +27,6 @@
         android:id="@+id/nav_historicoFragment"
         android:name="com.example.gas_app.fragments.HistoricoFragment"
         android:label="@string/historico"
-        tools:layout="@layout/fragment_historico">
-        <action
-            android:id="@+id/action_nav_historicoFragment_to_nav_home"
-            app:destination="@id/nav_home" />
-    </fragment>
+        tools:layout="@layout/fragment_historico"/>
 
 </navigation>

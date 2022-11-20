@@ -103,7 +103,7 @@ public class PedidoFragment extends Fragment {
                             Snackbar.make(view, "Erro ao submeter pedido.", Snackbar.LENGTH_LONG).show();
                         else {
                             Snackbar.make(view, "Pedido processado com sucesso!", Snackbar.LENGTH_LONG).show();
-                            Navigation.findNavController(view).navigate(R.id.action_nav_pedidoFragment_to_nav_historicoFragment);        }
+                            Navigation.findNavController(view).navigate(R.id.nav_home);        }
                     }
                 }.execute();
             }
